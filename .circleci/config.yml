@@ -2,7 +2,7 @@ version: 2.1
 description: Cloud Native Buildpacks Sample
 
 orbs:
-  buildpacks: jkutner/buildpacks
+  buildpacks: jkutner/buildpacks@0.0.3
 
 workflows:
   version: 2.1
