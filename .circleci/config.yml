@@ -15,7 +15,6 @@ workflows:
 
 jobs:
   publish:
-    machine:
-      docker_layer_caching: true
+    machine: true
     steps:
       - run: docker images
