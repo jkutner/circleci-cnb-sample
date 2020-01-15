@@ -12,6 +12,8 @@ workflows:
           image-name: myimage
           builder: heroku/buildpacks:18
       - publish
+          requires:
+            - buildpacks/build
 
 jobs:
   publish:
