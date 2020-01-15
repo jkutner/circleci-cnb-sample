@@ -91,5 +91,5 @@ jobs:
           at: /tmp/workspace
       - run:
           command: |
-            docker load /tmp/workspace/build/image.tgz
+            docker load -i /tmp/workspace/build/image.tgz
             docker images
