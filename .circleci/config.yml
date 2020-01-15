@@ -28,7 +28,7 @@ orbs:
             type: string
         steps:
           - run: mkdir -p build
-          - docker save -o build/image.tgz << parameters.image-name >>
+          - run: docker save -o build/image.tgz << parameters.image-name >>
           - persist_to_workspace:
               root: .
               paths:
