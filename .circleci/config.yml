@@ -10,7 +10,7 @@ workflows:
     jobs:
       - buildpacks/build:
           image-name: myimage
-          image-name: myimage.tgz
+          image-file: myimage.tgz
           builder: heroku/buildpacks:18
       - publish:
           requires:
