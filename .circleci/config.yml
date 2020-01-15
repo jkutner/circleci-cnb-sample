@@ -73,4 +73,5 @@ jobs:
   publish:
     machine: true
     steps:
+      - setup_remote_docker
       - run: docker images
