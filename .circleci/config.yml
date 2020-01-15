@@ -11,3 +11,11 @@ workflows:
       - buildpacks/build:
           image-name: myimage
           builder: heroku/buildpacks:18
+      - publish
+
+jobs:
+  publish:
+    machine:
+      docker_layer_caching: true
+    steps:
+      - docker images
