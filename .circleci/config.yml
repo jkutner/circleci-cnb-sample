@@ -2,11 +2,13 @@ version: 2.1
 description: Cloud Native Buildpacks Sample
 
 orbs:
+  docker: circleci/docker@0.5.18
+  orb-tools: circleci/orb-tools@8.8.0
   buildpacks:
     jobs:
       build:
         description: "Build OCI Image"
-        machine: true
+        executor: docker/docker
         parameters:
           image-name:
             type: string
@@ -71,7 +73,7 @@ workflows:
 
 jobs:
   publish:
-    machine: true
+    executor: docker/docker
     steps:
       - setup_remote_docker
       - run: docker images
