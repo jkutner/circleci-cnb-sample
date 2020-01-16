@@ -12,6 +12,7 @@ workflows:
           image-name: myimage
           image-file: myimage.tgz
           builder: heroku/buildpacks:18
+          buildpack: heroku/nodejs
       - publish:
           requires:
             - buildpacks/build
