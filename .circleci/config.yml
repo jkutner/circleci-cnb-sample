@@ -10,6 +10,7 @@ workflows:
     jobs:
       - buildpacks/build:
           image-name: myimage
+          image-file: myimage.tgz
           builder: heroku/buildpacks:18
           buildpack: heroku/jvm
       - publish:
@@ -24,5 +25,5 @@ jobs:
           at: /tmp/workspace
       - run:
           command: |
-            docker load -i /tmp/workspace/images/image.tgz
+            docker load -i /tmp/workspace/images/myimage.tgz
             docker images
