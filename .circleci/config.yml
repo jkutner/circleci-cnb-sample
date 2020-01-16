@@ -2,7 +2,7 @@ version: 2.1
 description: Cloud Native Buildpacks Sample
 
 orbs:
-  buildpacks: jkutner/buildpacks@dev:save-and-load
+  buildpacks: jkutner/buildpacks@dev:buildpack_opt
 
 workflows:
   version: 2.1
@@ -12,6 +12,7 @@ workflows:
           image-name: myimage
           image-file: myimage.tgz
           builder: heroku/buildpacks:18
+          buildpack: heroku/jvm
       - publish:
           requires:
             - buildpacks/build
