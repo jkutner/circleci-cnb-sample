@@ -12,7 +12,6 @@ workflows:
           image-name: myimage
           image-file: myimage.tgz
           builder: heroku/buildpacks:18
-          buildpack: heroku/jvm,heroku/procfile
       - publish:
           requires:
             - buildpacks/build
